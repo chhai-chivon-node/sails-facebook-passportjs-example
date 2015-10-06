@@ -1,0 +1,12 @@
+<h1>Animals</h1>
+<ul>
+    <li ng-repeat="animal in animals">
+        <div>
+            <p ng-repeat="(key, val) in model_def">{{key}} : {{animal[key]}}</p>
+        </div>
+        <a href="" ui-sref="animals.edit({ id: animal.id })">Edit</a>
+        <a href="" ng-click="remove(animal)">Delete</a>
+    </li>
+</ul>
+<div ng-show="animals.length === 0">Looks like you haven't added any animals yet?</div>
+<a ng-hide="adding" ui-sref="animals.add">Add A New Animal</a>

@@ -1,0 +1,11 @@
+<h1>Add / Edit animal</h1>
+<form name="new_animal_form">
+    <div ng-repeat="(attr_name, attr_value) in model_def">
+        <div ng-show="attr_name === 'name'">
+          <label for="{{attr_name}}">{{attr_name}}</label>
+          <input type="text" ng-model="animal[attr_name]" name="{{attr_name}}" />
+        </div>
+    </div>
+    <button ng-click="save(animal)">Save animal</button>
+    <button ui-sref="animals.list">Cancel</button>
+</form>
